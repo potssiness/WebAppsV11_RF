@@ -1,0 +1,13 @@
+*** Settings ***
+Library           SeleniumLibrary
+Library           Selenium2Library
+Library           DateTime
+Library           ExcelLibrary
+Library           openpyxl
+Library           Dialogs
+Library           String
+Library           BuiltIn
+Library           XML
+Library           Screenshot
+Library           OperatingSystem
+Library           DatabaseLibrary
