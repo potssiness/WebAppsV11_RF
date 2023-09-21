@@ -1,6 +1,5 @@
 *** Settings ***
 Library           SeleniumLibrary
-Library           Selenium2Library
 Library           DateTime
 Library           ExcelLibrary
 Library           openpyxl
