@@ -27,5 +27,6 @@ I am on FSM Login Portal Page and Navigate to FSM Menu
 
 I will navigate to applications
     Navigate to     ${APPLICATION_REQUESTER}
+    element should be visible    ${AVAILABLE_APPLICATION}
 
 

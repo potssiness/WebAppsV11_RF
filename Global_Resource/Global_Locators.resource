@@ -15,5 +15,6 @@ ${APPLICATION_HAMBURGER}            //button[@id='app-menu-trigger']
 ${APPLICATION_SEARCHFIELD}          //input[@id='application-menu-searchfield']
 ${APPLICATION_DROPDOWSELECTOR}      //button[@id='trigger-btn']
 
+
 #****************************************APPLICATION LIST****************************************
 ${APPLICATION_REQUESTER}            //a[@id='Requester']//span[contains(text(),'Requester')]
