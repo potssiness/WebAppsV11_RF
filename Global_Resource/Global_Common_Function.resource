@@ -18,12 +18,14 @@ I am on FSM Login Portal Page and Navigate to FSM Menu
     click and wait for element    ${Three}   ${INTERVAL}    ${APPLICATION_SHOW_MORE}
     ${FSM_MENU_V3}    run keyword and return status    element should be visible      ${4.0_FSM_MENU_V3}
     log    ${FSM_MENU_V3}
-    run keyword if    ${FSM_MENU_V3}=='null'    click and wait for element    ${Three}   ${INTERVAL}    ${4.0_FSM_MENU_V2}
+#    run keyword if    ${FSM_MENU_V3}=='null'    click and wait for element    ${Three}   ${INTERVAL}    ${4.0_FSM_MENU_V2}
     click and wait for element    ${Three}   ${INTERVAL}    ${4.0_FSM_MENU_V3}
     select frame    ${IFRAME_FSM_MENU}
     WAIT UNTIL ELEMENT IS VISIBLE       ${AVAILABLE_APPLICATION}    ${MaximumTimeout}
     log    visible
     sleep    ${StandardTimeout}
 
+I will navigate to applications
+    Navigate to     ${APPLICATION_REQUESTER}
 
 

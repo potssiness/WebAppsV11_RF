@@ -91,4 +91,13 @@ Create Item
     ${itemnumber1}    set global variable    ${ExtractedItemNumber1}
    # set global variable    ${itemnumber1}     ${ExtractedItemNumber1}
 
-
+Navigate to
+    [Arguments]    ${Applications}
+#    select frame    ${IFRAME_FSM_MENU}
+#    click and wait for element    ${INTERVAL}   	${Three}        ${APPLICATION_HAMBURGER}
+    ${APPLICATION_SEARCHFIELD_NEW}    run keyword and return status    element should be visible      ${APPLICATION_SEARCHFIELD}
+    run keyword if    ${APPLICATION_SEARCHFIELD_NEW}==${NULL}    click element    ${APPLICATION_HAMBURGER}
+    click element    ${APPLICATION_HAMBURGER}
+    CLICK AND WAIT FOR ELEMENT        ${INTERVAL}   	${Three}        ${APPLICATION_DROPDOWSELECTOR}
+    scroll element into view          ${Applications}
+    CLICK AND WAIT FOR ELEMENT        ${INTERVAL}   	${Three}        ${Applications}

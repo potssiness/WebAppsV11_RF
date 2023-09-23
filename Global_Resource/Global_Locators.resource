@@ -11,3 +11,9 @@ ${4.0_FSM_MENU_V3}                  //p[normalize-space()='4.0 FSM Menu V3']
 ${4.0_FSM_MENU_V2}                  //p[normalize-space()='4.0 FSM TestVersion V2']
 ${AVAILABLE_APPLICATION}            //span[@id='page-title']
 ${IFRAME_FSM_MENU}                  (//*[@class='osp-width-full osp-height-full'])[2]
+${APPLICATION_HAMBURGER}            //button[@id='app-menu-trigger']
+${APPLICATION_SEARCHFIELD}          //input[@id='application-menu-searchfield']
+${APPLICATION_DROPDOWSELECTOR}      //button[@id='trigger-btn']
+
+#****************************************APPLICATION LIST****************************************
+${APPLICATION_REQUESTER}            //a[@id='Requester']//span[contains(text(),'Requester')]
