@@ -1,5 +1,5 @@
 *** Settings ***
-Suite Setup       Open Browser And Maximize Window    ${D830RCA_AX1}    chrome
+Suite Setup       Open Browser And Maximize Window    ${D830RCA_AX1}    chrome    ${USER100}     PASSWORD=${USERPASS}
 #Suite Setup       Headless    Chrome    ${D830RCA_AX1}
 Suite Teardown    Close Browser
 #Test Timeout      5 minutes
@@ -10,8 +10,7 @@ Resource    TCCSF170_Keywords.resource
 
 *** Test Cases ***
 Precondition: Login
-    Given I am on FSM Login Portal Page and Navigate to FSM Menu
-    When I will navigate to applications Requester
+    Given I will navigate to applications Requester
     Then Go to RSS LPL
 
 Scenario: Start of Punchout UI testing

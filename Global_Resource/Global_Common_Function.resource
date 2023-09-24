@@ -1,15 +1,18 @@
 *** Settings ***
 Resource          Global_Resources.resource
 *** Keywords ***
-I am on FSM Login Portal Page and Navigate to FSM Menu
+FSM Login Portal Page and Navigate to FSM Menu
+	[Arguments]    ${USERNAME_VAR}=${NONE}      ${PASSWORD_VAR}=${NONE}
     #Go To   ${D830RCA_AX1}
     set selenium speed    ${SLOW_0_2}
     wait until element is visible    ${LoginButton}     ${StandardTimeout}
     Wait for elements to be displayed        ${UserNameField}    ${PasswordField}
-    Input Username and Password     ${UserNameField}    ${PasswordField}    ${USER100}      ${USERPASS}
+    Input Username and Password     ${UserNameField}    ${PasswordField}    ${USERNAME_VAR}      ${PASSWORD_VAR}
     Click And Wait For Element    ${Three}   ${INTERVAL}      ${LoginButton}
-    wait until element is visible    ${Email_Not_Verified}      ${StandardTimeout}
-    click and wait for element    ${Three}   ${INTERVAL}    ${Email_Not_Verified_CloseBtn}
+    Sleep    ${TEN}
+    ${Email_Not_Verified_NEW}  Run Keyword And Return Status    Element Should Be Visible    ${Email_Not_Verified}
+    Log To Console    ${Email_Not_Verified_NEW}
+    Run Keyword If   ${Email_Not_Verified_NEW} != ${FALSE}  Click and wait for element    ${Three}   ${INTERVAL}    ${Email_Not_Verified_CloseBtn}
     wait until element is visible    ${Application_Launcher}     ${StandardTimeout}
     click and wait for element    ${Three}   ${INTERVAL}    ${Application_Launcher}
     click and wait for element    ${Three}   ${INTERVAL}    ${APPLICATION_SHOW_MORE}

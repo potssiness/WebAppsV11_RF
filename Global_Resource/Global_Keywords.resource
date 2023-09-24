@@ -1,12 +1,14 @@
 *** Settings ***
 Resource          ../Libraries/All_Libraries.resource
 Resource          Global_Variables.resource
+Resource          Global_Common_Function.resource
 Resource          Global_Locators.resource
 *** Keywords ***
 Open Browser And Maximize Window
-    [Arguments]    ${Url}    ${Browser}
+    [Arguments]    ${Url}    ${Browser}   ${USER}=${EMPTY}  ${PASSWORD}=${EMPTY}
     Go to Browser    ${Url}    ${Browser}
     Maximize Browser Window
+    FSM Login Portal Page and Navigate to FSM Menu   ${USER}     ${PASSWORD}
   #  Maximize Browser Window
 Open On Headless Browser
     [Arguments]    ${driver}    ${URL}
@@ -94,8 +96,6 @@ Create Item
 
 Navigate to Applications
     [Arguments]    ${Applications}
-#    select frame    ${IFRAME_FSM_MENU}
-#    click and wait for element    ${INTERVAL}   	${Three}        ${APPLICATION_HAMBURGER}
     ${APPLICATION_SEARCHFIELD_NEW}    run keyword and return status    element should be visible      ${APPLICATION_SEARCHFIELD}
     run keyword if    ${APPLICATION_SEARCHFIELD_NEW}==${NULL}    click element    ${APPLICATION_HAMBURGER}
     click element    ${APPLICATION_HAMBURGER}

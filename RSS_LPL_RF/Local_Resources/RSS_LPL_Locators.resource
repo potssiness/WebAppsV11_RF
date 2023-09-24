@@ -1,6 +1,5 @@
 *** Variables ***
-*** Variables ***
-${NAV_RSS_LPL}                               //span[normalize-space()='Requisition Self Service LPL']`
+${NAV_RSS_LPL}                               //span[normalize-space()='Requisition Self Service LPL']
 ${NAV_SHOPPING_HOME}                         //span[normalize-space()='Shopping Home']
 ${START_REQUISITION_HEADER}                  //h2[@id='RequesterSelfServiceHomePage_Dashboard_1_StartRequisitions2_widget_title']
 ${SHOP_PUNCHOUT_VENDORS_BTN}                 //span[normalize-space()='Shop Punchout Vendors']
@@ -14,3 +13,6 @@ ${PUNCHOUT_ACTION_BTN}                       //button[@class='btn-actions']
 ${PUNCHOUT_TAB_BTN}                          //a[normalize-space()='Shop Punchout Vendors']
 ${PUNCHOUT_ACTION_BTN}                       //lm-block-grid[@class='ng-star-inserted']//div[@class='scrollable-flex-content']
 ${PUNCHOUT_SCREEN_SCROLLABLE}                //button[@id='RequesterShoppingPage_ShopPunchoutVendors_3_RSSLPLShopPunchoutVendorsList_pager-btn-pagesize']
+${PUNCHOUT_REQUESTER_SHOPPING_PAGE_HEADER}   //span[@id='page-title']
+${PUNCHOUT_ARROW_KEYS}                       //button[@id='RequesterShoppingPage_ShopPunchoutVendors_3_RSSLPLShopPunchoutVendorsList_pager-btn-next']
+
