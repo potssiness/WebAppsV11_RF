@@ -5,7 +5,7 @@ Resource          Global_Common_Function.resource
 Resource          Global_Locators.resource
 *** Keywords ***
 Open Browser And Maximize Window
-    [Arguments]    ${Url}    ${Browser}   ${USER}=${EMPTY}  ${PASSWORD}=${EMPTY}
+    [Arguments]    ${Browser}   ${Url}   ${USER}=${EMPTY}  ${PASSWORD}=${EMPTY}
     Go to Browser    ${Url}    ${Browser}
     Maximize Browser Window
     FSM Login Portal Page and Navigate to FSM Menu   ${USER}     ${PASSWORD}

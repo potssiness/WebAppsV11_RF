@@ -1,7 +1,6 @@
 *** Settings ***
-Resource    ../../../Local_Resources/RSS_LPL_Keywords.resource
-Resource    ../../../Local_Resources/RSS_LPL_Locators.resource
-Resource    ../../../../Global_Resource/Global_Resources.resource
+Resource    ../../../../Local_Resources/RSS_LPL_Resources.resource
+Resource    ../../../../../Global_Resource/Global_Resources.resource
 
 *** Keywords ***
 I will navigate to applications Requester
