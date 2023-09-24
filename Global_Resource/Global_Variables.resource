@@ -15,6 +15,7 @@ ${SLOW_0_2}	0.2
 ${REMOVE_SLOW}	0
 ${RETRY}	10
 ${INTERVAL}	2
+${INTERVAL_3}	3
 ${DELAY}	10
 ${MaximumTimeout}	30
 ${StandardTimeout}	10

@@ -1,8 +1,5 @@
 *** Settings ***
-Resource          ../Libraries/All_Libraries.resource
-Resource          Global_Variables.resource
-Resource          Global_Locators.resource
-Resource          Global_Keywords.resource
+Resource          Global_Resources.resource
 *** Keywords ***
 I am on FSM Login Portal Page and Navigate to FSM Menu
     #Go To   ${D830RCA_AX1}
@@ -25,8 +22,6 @@ I am on FSM Login Portal Page and Navigate to FSM Menu
     log    visible
     sleep    ${StandardTimeout}
 
-I will navigate to applications
-    Navigate to     ${APPLICATION_REQUESTER}
-    element should be visible    ${AVAILABLE_APPLICATION}
+
 
 

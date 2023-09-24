@@ -68,6 +68,7 @@ Input Text2
     Input Text    ${Locator}    ${Data}
 
 Click And Wait For Element
+#    [Documentation]    NumberofRetry    Interval    Locator
     [Arguments]    ${NumberOfRetry}    ${Interval}    ${Locator}
     Wait Until Element Is Visible    ${Locator}    ${StandardTimeout}
     Wait Until Keyword Succeeds    ${NumberOfRetry}    ${Interval}    Click Element    ${Locator}
@@ -91,7 +92,7 @@ Create Item
     ${itemnumber1}    set global variable    ${ExtractedItemNumber1}
    # set global variable    ${itemnumber1}     ${ExtractedItemNumber1}
 
-Navigate to
+Navigate to Applications
     [Arguments]    ${Applications}
 #    select frame    ${IFRAME_FSM_MENU}
 #    click and wait for element    ${INTERVAL}   	${Three}        ${APPLICATION_HAMBURGER}
