@@ -5,7 +5,7 @@ Resource          Global_Common_Function.resource
 Resource          Global_Locators.resource
 *** Keywords ***
 Open Browser And Maximize Window
-    [Arguments]    ${Browser}   ${Url}   ${USER}=${EMPTY}  ${PASSWORD}=${EMPTY}
+    [Arguments]      ${Url}    ${Browser}   ${USER}=${EMPTY}  ${PASSWORD}=${EMPTY}
     Go to Browser    ${Url}    ${Browser}
     Maximize Browser Window
     FSM Login Portal Page and Navigate to FSM Menu   ${USER}     ${PASSWORD}
@@ -70,7 +70,6 @@ Input Text2
     Input Text    ${Locator}    ${Data}
 
 Click And Wait For Element
-#    [Documentation]    NumberofRetry    Interval    Locator
     [Arguments]    ${NumberOfRetry}    ${Interval}    ${Locator}
     Wait Until Element Is Visible    ${Locator}    ${StandardTimeout}
     Wait Until Keyword Succeeds    ${NumberOfRetry}    ${Interval}    Click Element    ${Locator}
@@ -82,17 +81,6 @@ Wait for elements to be displayed
     Wait Until Element Is Visible    ${Element 1}    ${MaximumTimeout}
     Wait Until Element Is Visible    ${Element 2}    ${MaximumTimeout}
 
-Create Item
-    [Arguments]
-    click and wait for element    createbtn
-    input text      bg1
-    input text    TCCSF170desc1
-    input text    TCCSF170desc2
-    input text    EA
-    click and wait for element    savebtn
-    ${ExtractedItemNumber1}    get text    //p[@id='ItemForm_Item_3']
-    ${itemnumber1}    set global variable    ${ExtractedItemNumber1}
-   # set global variable    ${itemnumber1}     ${ExtractedItemNumber1}
 
 Navigate to Applications
     [Arguments]    ${Applications}

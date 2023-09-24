@@ -9,6 +9,9 @@ ${USER99}  500099
 #**********LOGIN PASSWORD**********
 ${USERPASS}    N0R3gr3ss1on!_MT
 
+#**********DRIVERS**********
+${DRIVER}   chrome
+
 #**********TIMEOUT**********
 ${SLOW}	0.5
 ${SLOW_0_2}	0.2
@@ -20,7 +23,11 @@ ${INTERVAL_3}	3
 ${DELAY}	10
 ${MaximumTimeout}	30
 ${StandardTimeout}	10
-#**********RETRY**********
+#**********     RETRY       **********
 ${Three}    3
 ${FIVE}     5
 ${TEN}      10
+#**********     DATA       **********
+
+${BG1}          BG1
+${EA}           EA
