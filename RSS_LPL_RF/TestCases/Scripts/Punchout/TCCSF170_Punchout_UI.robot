@@ -8,15 +8,15 @@ Resource    ../../../Local_Resources/RSS_LPL_Keywords.resource
 Resource    TCCSF170_Keywords.resource
 
 
-
-
 *** Test Cases ***
 Precondition: Login
     Given I am on FSM Login Portal Page and Navigate to FSM Menu
     When I will navigate to applications Requester
     Then Go to RSS LPL
 
-Start of Punchout UI testing
-    Given   I will novigate to Punchout
+Scenario: Start of Punchout UI testing
+    Given I will novigate to Punchout
+    And I will validate fields buttons in Punchout screen
+
 
 
