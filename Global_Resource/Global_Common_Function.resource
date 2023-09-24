@@ -2,7 +2,7 @@
 Resource          Global_Resources.resource
 *** Keywords ***
 FSM Login Portal Page and Navigate to FSM Menu
-	[Arguments]    ${USERNAME_VAR}=${NONE}      ${PASSWORD_VAR}=${NONE}
+	[Arguments]    ${USERNAME_VAR}      ${PASSWORD_VAR}
     #Go To   ${D830RCA_AX1}
     set selenium speed    ${SLOW_0_2}
     wait until element is visible    ${LoginButton}     ${StandardTimeout}

@@ -5,7 +5,7 @@ Resource          Global_Common_Function.resource
 Resource          Global_Locators.resource
 *** Keywords ***
 Open Browser And Maximize Window
-    [Arguments]      ${Url}    ${Browser}   ${USER}=${EMPTY}  ${PASSWORD}=${EMPTY}
+    [Arguments]      ${Url}    ${Browser}   ${USER}  ${PASSWORD}
     Go to Browser    ${Url}    ${Browser}
     Maximize Browser Window
     FSM Login Portal Page and Navigate to FSM Menu   ${USER}     ${PASSWORD}
@@ -24,6 +24,7 @@ Open On Headless Browser
     Comment    Maximize Browser Window
     Comment    Maximize Browser Window
 
+
 Firefox true headless
     [Arguments]    ${URL}
     ${firefox options}=    Evaluate    sys.modules['selenium.webdriver'].firefox.webdriver.Options()    sys, selenium.webdriver
@@ -38,11 +39,25 @@ Firefox true headless
     Comment    Page Should Contain Element    //img[@alt='TrueMoney']
 
 Headless
-    [Arguments]    ${driver}    ${URL}    ${Username}=${None}    ${Password}=${None}
+    [Arguments]      ${driver}    ${URL}   ${Username}=${None}    ${Password}=${None}
     Run Keyword If    '${driver}' == 'Firefox' or '${driver}' == 'firefox'    Firefox true headless    ${URL}
     ...    ELSE IF    '${driver}' == 'Chrome' or '${driver}' == 'chrome'    Open On Headless Browser    ${driver}    ${URL}
     ### Loggin in keyword
-    Run Keyword If    '${Username}' != '${None}' and '${Password}' != '${None}'    If User Is Not Logged In    ${Username}    ${Password}
+#    Run Keyword If    '${Username}' != '${None}' and '${Password}' != '${None}'    If User Is Not Logged In    ${Username}    ${Password}
+    Run Keyword If    '${Username}' != '${None}' and '${Password}' != '${None}'    FSM Login Portal Page and Navigate to FSM Menu    ${Username}    ${Password}
+
+If User Is Not Logged In
+    [Arguments]    ${Username}    ${Password}
+    Wait for elements to be displayed    ${UserNameField}    ${PasswordField}
+    Wait Until Keyword Succeeds    ${RETRY}    ${INTERVAL}    Wait Until Element Is Visible    ${LoginButton}    ${INTERVAL}
+    Input Text2     ${UserNameField}    ${Username}
+    Input Password    ${PasswordField}   ${Password}
+    Click And Wait For Element    ${RETRY}    ${INTERVAL}    ${LoginButton}
+    Wait Until Element Is Not Visible    ${LoginButton}    ${StandardTimeout}
+    sleep   ${TEN}
+    Wait Until Keyword Succeeds    ${RETRY}    ${INTERVAL}    Page Should Not Contain Element    ${UserNameField}
+    Wait Until Keyword Succeeds    ${RETRY}    ${INTERVAL}    Page Should Not Contain Element    ${PasswordField}
+    Wait Until Keyword Succeeds    ${RETRY}    ${INTERVAL}    Page Should Contain Element    ${AVAILABLE_APPLICATION}    ${StandardTimeout}
 
 Go to Browser
     [Arguments]    ${URL}    ${Browser}

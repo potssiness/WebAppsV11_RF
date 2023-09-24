@@ -13,10 +13,6 @@ ${AVAILABLE_APPLICATION}            //span[@id='page-title']
 ${IFRAME_FSM_MENU}                  (//*[@class='osp-width-full osp-height-full'])[2]
 
 
-
-
-
-
 #******************   Application Location List   ******************
 ${APPLICATION_HAMBURGER}            //button[@id='app-menu-trigger']
 ${APPLICATION_SEARCHFIELD}          //input[@id='application-menu-searchfield']
