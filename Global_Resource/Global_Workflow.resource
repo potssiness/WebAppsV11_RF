@@ -11,8 +11,10 @@ Navigate to Manage Item
 
 Navigate to via Search bar
 	[Arguments]    ${SEARCH_VALUE}      ${LOCATOR_OF_SEARCH_APPLICATION}
-	Clear Element Text    ${APPLICATION_SEARCHFIELD}
-    Log To Console    Navigating to Manage Item
+    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}   Run Keyword And Return Status     Element Should Be Visible   ${APPLICATION_SEARCHFIELD_CLOSE_BTN}
+    Log    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}
+    Run Keyword If    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new} != ${FALSE}    Click And Wait For Element    ${FIVE}    ${FIVE}    ${APPLICATION_SEARCHFIELD_CLOSE_BTN}
+	Sleep    10
     Click And Wait For Element    ${FIVE}       ${FIVE}     ${APPLICATION_SEARCHFIELD}
     Input Text2 and Enter       ${APPLICATION_SEARCHFIELD}      ${SEARCH_VALUE}
     Sleep    ${FIVE}
@@ -37,6 +39,20 @@ Create Item
     set global variable    ${ItemNumber1}
     Log To Console    ITEM NUMBER = ${ItemNumber1}
 
+Create Manange Item Location
+	#*******   Supply arguments to become non stock to uncheck inventory track   *******
+    [Arguments]    ${INVENTORY_TRACK_NO}=[NONE]
+	Wait Until Element Is Visible     ${MANAGE_ITEM_LOCATION_HEADER}    ${TEN}
+	Sleep    ${FIVE}
+	Element Should Be Visible       ${MANAGE_ITEM_LOCATION_TITLE}       ${ELEMENT_DISPLAYED}
+	Click And Wait For Element      ${FIVE}     ${FIVE}     ${MANAGE_ITEM_LOCATION_CREATE_BTN}
+    Click And Wait For Element      ${FIVE}     ${FIVE}     ${MANAGE_ITEM_LOCATION_CREATE_HOME_PAGE}
+    Input Text2    ${ITEMLOC_COMPANY_FIELD}     ${9000}
+    Input Text2    ${ITEMLOC_LOCATION}      ${LOC1}
+    Log To Console    ${ItemNumber1}
+    Input Text2    ${ITEMLOC_ITEM}      ${ItemNumber1}
+    Unselect Checkbox   ${INVENTORY_TRACK_NO}
+    Click And Wait For Element    ${FIVE}   ${FIVE}     ${ITEMLOC_SAVEBTN}
 
 
 

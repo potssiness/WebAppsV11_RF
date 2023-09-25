@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20230925 22:17:17.095" rpa="false" schemaversion="4">
+<suite id="s1" name="TCCSF165 SearchCatalog" source="C:\Users\mcapote\PycharmProjects\WebAppsV11_RF\RSS_LPL_RF\TestCases\Scripts\TCCSF165_SearchCatalog\TCCSF165_SearchCatalog.robot">
+<kw name="Open Browser And Maximize Window" library="Global_Keywords" type="SETUP">
+<arg>${D830RCA_AX1}</arg>
+<arg>${DRIVER}</arg>
+<arg>${USER100}</arg>
+<arg>${USERPASS}</arg>
+<kw name="Go to Browser" library="Global_Keywords">
+<arg>${Url}</arg>
+<arg>${Browser}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230925 22:17:17.313" level="INFO">Opening browser 'chrome' to base url 'https://mingle-cqa-portal.cqa.inforcloudsuite.com/v2/D830RCA_AX1/'.</msg>
+<status status="PASS" starttime="20230925 22:17:17.313" endtime="20230925 22:17:22.979"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:17.313" endtime="20230925 22:17:22.979"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230925 22:17:22.979" endtime="20230925 22:17:23.112"/>
+</kw>
+<kw name="FSM Login Portal Page and Navigate to FSM Menu" library="Global_Common_Function">
+<arg>${USER}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${SLOW_0_2}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230925 22:17:23.112" endtime="20230925 22:17:23.112"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LoginButton}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:23.112" endtime="20230925 22:17:25.492"/>
+</kw>
+<kw name="Wait for elements to be displayed" library="Global_Keywords">
+<arg>${UserNameField}</arg>
+<arg>${PasswordField}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element 1}</arg>
+<arg>${MaximumTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:25.494" endtime="20230925 22:17:25.936"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element 2}</arg>
+<arg>${MaximumTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:25.936" endtime="20230925 22:17:26.374"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:25.492" endtime="20230925 22:17:26.374"/>
+</kw>
+<kw name="Input Username and Password" library="Global_Keywords">
+<arg>${UserNameField}</arg>
+<arg>${PasswordField}</arg>
+<arg>${USERNAME_VAR}</arg>
+<arg>${PASSWORD_VAR}</arg>
+<kw name="Wait for elements to be displayed" library="Global_Keywords">
+<arg>${UserNameLocator}</arg>
+<arg>${PassLocator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element 1}</arg>
+<arg>${MaximumTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:26.374" endtime="20230925 22:17:26.798"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element 2}</arg>
+<arg>${MaximumTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:26.798" endtime="20230925 22:17:27.224"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:26.374" endtime="20230925 22:17:27.224"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${UserNameLocator}</arg>
+<arg>${UserNameData}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:27.225" endtime="20230925 22:17:27.654"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:27.654" level="INFO">Clicking element '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20230925 22:17:27.654" endtime="20230925 22:17:28.129"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:27.654" endtime="20230925 22:17:28.129"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:27.225" endtime="20230925 22:17:28.129"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:28.129" level="INFO">Typing text '5000100' into text field '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20230925 22:17:28.129" endtime="20230925 22:17:28.853"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:27.224" endtime="20230925 22:17:28.853"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${PassLocator}</arg>
+<arg>${PassData}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:28.853" endtime="20230925 22:17:29.274"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:29.276" level="INFO">Clicking element '//input[@id='pass']'.</msg>
+<status status="PASS" starttime="20230925 22:17:29.274" endtime="20230925 22:17:29.738"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:29.274" endtime="20230925 22:17:29.738"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:28.853" endtime="20230925 22:17:29.738"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:29.738" level="INFO">Typing text 'N0R3gr3ss1on!_MT' into text field '//input[@id='pass']'.</msg>
+<status status="PASS" starttime="20230925 22:17:29.738" endtime="20230925 22:17:30.482"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:28.853" endtime="20230925 22:17:30.482"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:26.374" endtime="20230925 22:17:30.482"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${Three}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${LoginButton}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:30.482" endtime="20230925 22:17:30.920"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:30.920" level="INFO">Clicking element '//button[contains(text(),'Sign In')]'.</msg>
+<status status="PASS" starttime="20230925 22:17:30.920" endtime="20230925 22:17:33.660"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:30.920" endtime="20230925 22:17:33.660"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:30.482" endtime="20230925 22:17:33.660"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${TEN}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:17:43.661" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230925 22:17:33.661" endtime="20230925 22:17:43.661"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Email_Not_Verified_NEW}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${Email_Not_Verified}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${Email_Not_Verified}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230925 22:17:44.101" level="INFO">Element '//div[@class='text-base osp-truncate-text osp-ntf-text has-tooltip']' is displayed.</msg>
+<status status="PASS" starttime="20230925 22:17:43.662" endtime="20230925 22:17:44.101"/>
+</kw>
+<msg timestamp="20230925 22:17:44.101" level="INFO">${Email_Not_Verified_NEW} = True</msg>
+<status status="PASS" starttime="20230925 22:17:43.661" endtime="20230925 22:17:44.101"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Email_Not_Verified_NEW}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230925 22:17:44.101" endtime="20230925 22:17:44.101"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Email_Not_Verified_NEW} != ${FALSE}</arg>
+<arg>Click and wait for element</arg>
+<arg>${Three}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Email_Not_Verified_CloseBtn}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${Three}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Email_Not_Verified_CloseBtn}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:44.102" endtime="20230925 22:17:44.607"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:44.608" level="INFO">Clicking element '//div[@class='osp-ntf-close']//button[@type='button']'.</msg>
+<status status="PASS" starttime="20230925 22:17:44.607" endtime="20230925 22:17:45.391"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:44.607" endtime="20230925 22:17:45.391"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:44.102" endtime="20230925 22:17:45.391"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:44.101" endtime="20230925 22:17:45.391"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Application_Launcher}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:45.391" endtime="20230925 22:17:45.865"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${Three}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Application_Launcher}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:45.865" endtime="20230925 22:17:46.283"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:46.283" level="INFO">Clicking element '//button[@id='osp-nav-launcher']'.</msg>
+<status status="PASS" starttime="20230925 22:17:46.283" endtime="20230925 22:17:46.856"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:46.283" endtime="20230925 22:17:46.856"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:45.865" endtime="20230925 22:17:46.856"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${APPLICATION_SHOW_MORE}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230925 22:17:46.856" endtime="20230925 22:17:47.603"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${Three}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${APPLICATION_SHOW_MORE}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:47.603" endtime="20230925 22:17:48.039"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:48.041" level="INFO">Clicking element '//button[@class='show-more-btn osp-margin-lg-b btn-tertiary hide-focus ng-star-inserted']'.</msg>
+<status status="PASS" starttime="20230925 22:17:48.040" endtime="20230925 22:17:48.580"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:48.039" endtime="20230925 22:17:48.580"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:47.603" endtime="20230925 22:17:48.580"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${FIVE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:17:53.581" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230925 22:17:48.580" endtime="20230925 22:17:53.581"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${Three}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${4.0_FSM_TESTVERSION_V2}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:17:53.582" endtime="20230925 22:17:54.037"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:17:54.037" level="INFO">Clicking element '//p[normalize-space()='4.0 FSM TestVersion V2']'.</msg>
+<status status="PASS" starttime="20230925 22:17:54.037" endtime="20230925 22:17:54.494"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:54.037" endtime="20230925 22:17:54.494"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:53.581" endtime="20230925 22:17:54.494"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${IFRAME_FSM_MENU}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230925 22:17:54.494" level="INFO">Selecting frame '(//*[@class='osp-width-full osp-height-full'])[2]'.</msg>
+<status status="PASS" starttime="20230925 22:17:54.494" endtime="20230925 22:17:54.935"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>visible</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230925 22:17:54.935" level="INFO">visible</msg>
+<status status="PASS" starttime="20230925 22:17:54.935" endtime="20230925 22:17:54.935"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${StandardTimeout}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:18:04.936" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230925 22:17:54.935" endtime="20230925 22:18:04.936"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:23.112" endtime="20230925 22:18:04.936"/>
+</kw>
+<status status="PASS" starttime="20230925 22:17:17.313" endtime="20230925 22:18:04.936"/>
+</kw>
+<test id="s1-t1" name="PRECONDITION: CREATE ITEM DATA" line="11">
+<kw name="Given I Click Navigate To Applications Application Administrator" library="TCCSF165_Keywords">
+<kw name="Navigate to Applications" library="Global_Keywords">
+<arg>${APPLICATION_APP_ADMIN}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${APPLICATION_SEARCHFIELD_NEW}</var>
+<arg>element should be visible</arg>
+<arg>${APPLICATION_SEARCHFIELD}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${APPLICATION_SEARCHFIELD}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230925 22:18:05.729" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230925 22:18:05.729" level="FAIL">The element '//input[@id='application-menu-searchfield']' should be visible, but it is not.</msg>
+<status status="FAIL" starttime="20230925 22:18:04.938" endtime="20230925 22:18:05.731"/>
+</kw>
+<msg timestamp="20230925 22:18:05.731" level="INFO">${APPLICATION_SEARCHFIELD_NEW} = False</msg>
+<status status="PASS" starttime="20230925 22:18:04.938" endtime="20230925 22:18:05.731"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${APPLICATION_SEARCHFIELD_NEW}==${NULL}</arg>
+<arg>click element</arg>
+<arg>${APPLICATION_HAMBURGER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230925 22:18:05.731" endtime="20230925 22:18:05.731"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${APPLICATION_HAMBURGER}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:05.732" endtime="20230925 22:18:06.175"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:06.177" level="INFO">Clicking element '//button[@id='app-menu-trigger']'.</msg>
+<status status="PASS" starttime="20230925 22:18:06.176" endtime="20230925 22:18:06.688"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:06.175" endtime="20230925 22:18:06.688"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:05.731" endtime="20230925 22:18:06.688"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${INTERVAL}</arg>
+<arg>${Three}</arg>
+<arg>${APPLICATION_DROPDOWSELECTOR}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:06.689" endtime="20230925 22:18:07.156"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:07.156" level="INFO">Clicking element '//button[@id='trigger-btn'] | //button[@id='webapp-menu']'.</msg>
+<status status="PASS" starttime="20230925 22:18:07.156" endtime="20230925 22:18:07.704"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:07.156" endtime="20230925 22:18:07.704"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:06.688" endtime="20230925 22:18:07.704"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Applications}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230925 22:18:07.704" endtime="20230925 22:18:08.467"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${INTERVAL}</arg>
+<arg>${Three}</arg>
+<arg>${Applications}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:08.468" endtime="20230925 22:18:08.914"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:08.914" level="INFO">Clicking element '//span[normalize-space()='Application Administrator']'.</msg>
+<status status="PASS" starttime="20230925 22:18:08.914" endtime="20230925 22:18:09.448"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:08.914" endtime="20230925 22:18:09.448"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:08.467" endtime="20230925 22:18:09.448"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:04.937" endtime="20230925 22:18:09.448"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${AVAILABLE_APPLICATION}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230925 22:18:09.880" level="INFO">Element '//span[@id='page-title'] | //span[@class='page-title']' is displayed.</msg>
+<status status="PASS" starttime="20230925 22:18:09.448" endtime="20230925 22:18:09.880"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:04.937" endtime="20230925 22:18:09.880"/>
+</kw>
+<kw name="And I Navigate To Manage Item" library="TCCSF165_Keywords">
+<kw name="Navigate to via Search bar" library="Global_Workflow">
+<arg>${MANAGE_ITEM}</arg>
+<arg>${SEARCH_MANAGE_ITEM}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230925 22:18:10.462" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230925 22:18:10.462" level="FAIL">Element with locator '//button[@class='btn-icon hide-focus close']' not found.</msg>
+<status status="FAIL" starttime="20230925 22:18:09.880" endtime="20230925 22:18:10.467"/>
+</kw>
+<msg timestamp="20230925 22:18:10.467" level="INFO">${APPLICATION_SEARCHFIELD_CLOSE_BTN_new} = False</msg>
+<status status="PASS" starttime="20230925 22:18:09.880" endtime="20230925 22:18:10.467"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230925 22:18:10.467" level="INFO">False</msg>
+<status status="PASS" starttime="20230925 22:18:10.467" endtime="20230925 22:18:10.467"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN_new} != ${FALSE}</arg>
+<arg>Click And Wait For Element</arg>
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230925 22:18:10.467" endtime="20230925 22:18:10.467"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:18:20.467" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230925 22:18:10.467" endtime="20230925 22:18:20.467"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${APPLICATION_SEARCHFIELD}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:20.468" endtime="20230925 22:18:20.916"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:20.917" level="INFO">Clicking element '//input[@id='application-menu-searchfield']'.</msg>
+<status status="PASS" starttime="20230925 22:18:20.916" endtime="20230925 22:18:21.426"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:20.916" endtime="20230925 22:18:21.426"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:20.467" endtime="20230925 22:18:21.427"/>
+</kw>
+<kw name="Input Text2 and Enter" library="Global_Keywords">
+<arg>${APPLICATION_SEARCHFIELD}</arg>
+<arg>${SEARCH_VALUE}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:21.428" endtime="20230925 22:18:21.875"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:21.877" level="INFO">Clicking element '//input[@id='application-menu-searchfield']'.</msg>
+<status status="PASS" starttime="20230925 22:18:21.876" endtime="20230925 22:18:22.372"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:21.875" endtime="20230925 22:18:22.372"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:21.427" endtime="20230925 22:18:22.372"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:22.374" level="INFO">Typing text 'Manage Item' into text field '//input[@id='application-menu-searchfield']'.</msg>
+<status status="PASS" starttime="20230925 22:18:22.373" endtime="20230925 22:18:23.108"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${ENTER}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230925 22:18:23.110" level="INFO">Sending key(s) ('ENTER',) to //input[@id='application-menu-searchfield'] element.</msg>
+<msg timestamp="20230925 22:18:23.836" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230925 22:18:23.836" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230925 22:18:23.108" endtime="20230925 22:18:24.057"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:18:29.058" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230925 22:18:24.057" endtime="20230925 22:18:29.058"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:21.427" endtime="20230925 22:18:29.058"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${FIVE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:18:34.058" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230925 22:18:29.058" endtime="20230925 22:18:34.059"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${LOCATOR_OF_SEARCH_APPLICATION}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:34.060" endtime="20230925 22:18:34.487"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:34.487" level="INFO">Clicking element '(//span[contains(text(),'Manage Items')])[1]'.</msg>
+<status status="PASS" starttime="20230925 22:18:34.487" endtime="20230925 22:18:34.994"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:34.487" endtime="20230925 22:18:34.994"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:34.059" endtime="20230925 22:18:34.994"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:09.880" endtime="20230925 22:18:34.994"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:09.880" endtime="20230925 22:18:34.994"/>
+</kw>
+<kw name="And I Create Stock Item" library="TCCSF165_Keywords">
+<kw name="Create Item" library="Global_Workflow">
+<arg>${TCCSF165}</arg>
+<arg>${TCCSF165}</arg>
+<arg>${EA}</arg>
+<kw name="Generate Random String" library="String">
+<var>${RANDNumber}</var>
+<arg>6</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230925 22:18:34.995" level="INFO">${RANDNumber} = 506548</msg>
+<status status="PASS" starttime="20230925 22:18:34.995" endtime="20230925 22:18:34.995"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${RANDNumber}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230925 22:18:34.995" level="INFO">506548</msg>
+<status status="PASS" starttime="20230925 22:18:34.995" endtime="20230925 22:18:34.995"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MANAGE_ITEM_LABEL}</arg>
+<arg>${TEN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:34.995" endtime="20230925 22:18:36.808"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${CREATE_ITEM_BTN}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:36.810" endtime="20230925 22:18:38.265"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:38.265" level="INFO">Clicking element '//button[@id='ItemPage_ItemDashboard_0_ItemPrimaryDashboard_Create_0'] | //button[@id='ItemPage_ItemDashboard_ItemPrimaryDashboard_Create_0_toolbar_button']'.</msg>
+<status status="PASS" starttime="20230925 22:18:38.265" endtime="20230925 22:18:38.814"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:38.265" endtime="20230925 22:18:38.814"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:36.809" endtime="20230925 22:18:38.814"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CREATE_ITEM_MAIN_TAB}</arg>
+<arg>${TEN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:38.814" endtime="20230925 22:18:40.962"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${CREATE_ITEM_ITEMGROUP}</arg>
+<arg>${BG1}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:40.963" endtime="20230925 22:18:41.393"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:41.393" level="INFO">Clicking element '//input[@id='ItemForm_ItemGroup']'.</msg>
+<status status="PASS" starttime="20230925 22:18:41.393" endtime="20230925 22:18:41.887"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:41.393" endtime="20230925 22:18:41.887"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:40.963" endtime="20230925 22:18:41.887"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:41.887" level="INFO">Typing text 'BG1' into text field '//input[@id='ItemForm_ItemGroup']'.</msg>
+<status status="PASS" starttime="20230925 22:18:41.887" endtime="20230925 22:18:42.614"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:40.962" endtime="20230925 22:18:42.614"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${CREATE_ITEM_DESCRIPTION_ONE}</arg>
+<arg>${FIRST_ITEM_ITEMDESCRIPTION_ONE}${RANDNumber}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:42.616" endtime="20230925 22:18:43.039"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:43.041" level="INFO">Clicking element '//input[@id='ItemForm_Description_1']'.</msg>
+<status status="PASS" starttime="20230925 22:18:43.039" endtime="20230925 22:18:43.548"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:43.039" endtime="20230925 22:18:43.548"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:42.615" endtime="20230925 22:18:43.548"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:43.548" level="INFO">Typing text 'TCCSF165_506548' into text field '//input[@id='ItemForm_Description_1']'.</msg>
+<status status="PASS" starttime="20230925 22:18:43.548" endtime="20230925 22:18:44.324"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:42.615" endtime="20230925 22:18:44.324"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${CREATE_ITEM_DESCRIPTION_TWO}</arg>
+<arg>${FIRST_ITEM_ITEMDESCRIPTION_TWO}${RANDNumber}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:44.325" endtime="20230925 22:18:44.769"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:44.769" level="INFO">Clicking element '//input[@id='ItemForm_Description2']'.</msg>
+<status status="PASS" starttime="20230925 22:18:44.769" endtime="20230925 22:18:45.270"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:44.769" endtime="20230925 22:18:45.270"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:44.325" endtime="20230925 22:18:45.270"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:45.270" level="INFO">Typing text 'TCCSF165_506548' into text field '//input[@id='ItemForm_Description2']'.</msg>
+<status status="PASS" starttime="20230925 22:18:45.270" endtime="20230925 22:18:46.014"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:44.324" endtime="20230925 22:18:46.014"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${CREATE_ITEM_UOM}</arg>
+<arg>${FIRST_ITEM_UOM}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:46.016" endtime="20230925 22:18:46.478"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:46.478" level="INFO">Clicking element '//input[@id='ItemForm_StockUOM']'.</msg>
+<status status="PASS" starttime="20230925 22:18:46.478" endtime="20230925 22:18:46.971"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:46.478" endtime="20230925 22:18:46.971"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:46.015" endtime="20230925 22:18:46.971"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:46.971" level="INFO">Typing text 'EA' into text field '//input[@id='ItemForm_StockUOM']'.</msg>
+<status status="PASS" starttime="20230925 22:18:46.971" endtime="20230925 22:18:47.713"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:46.014" endtime="20230925 22:18:47.713"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${CREATE_ITEM_SAVE_BTN}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:47.715" endtime="20230925 22:18:48.168"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:48.170" level="INFO">Clicking element '//button[@id='ItemForm_StandardSave'] | //button[@id='ItemForm_StandardSave_toolbar_button']'.</msg>
+<status status="PASS" starttime="20230925 22:18:48.169" endtime="20230925 22:18:48.672"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:48.168" endtime="20230925 22:18:48.672"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:47.713" endtime="20230925 22:18:48.672"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CREATE_ITEM_ITEM_NUMBER}</arg>
+<arg>${TEN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:48.672" endtime="20230925 22:18:50.779"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${ItemNumber1}</var>
+<arg>${CREATE_ITEM_ITEM_NUMBER}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:51.233" level="INFO">${ItemNumber1} = 27817</msg>
+<status status="PASS" starttime="20230925 22:18:50.779" endtime="20230925 22:18:51.233"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${ItemNumber1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230925 22:18:51.233" level="INFO">${ItemNumber1} = 27817</msg>
+<status status="PASS" starttime="20230925 22:18:51.233" endtime="20230925 22:18:51.233"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>ITEM NUMBER = ${ItemNumber1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230925 22:18:51.233" endtime="20230925 22:18:51.233"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:34.995" endtime="20230925 22:18:51.233"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:34.995" endtime="20230925 22:18:51.233"/>
+</kw>
+<kw name="And I Navigate to Item Location" library="TCCSF165_Keywords">
+<kw name="Navigate to via Search bar" library="Global_Workflow">
+<arg>${MANAGE_ITEM_LOCATION}</arg>
+<arg>${SEARCH_MANAGE_ITEM_LOCATION}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230925 22:18:51.676" level="INFO">Element '//button[@class='btn-icon hide-focus close']' is displayed.</msg>
+<status status="PASS" starttime="20230925 22:18:51.233" endtime="20230925 22:18:51.676"/>
+</kw>
+<msg timestamp="20230925 22:18:51.676" level="INFO">${APPLICATION_SEARCHFIELD_CLOSE_BTN_new} = True</msg>
+<status status="PASS" starttime="20230925 22:18:51.233" endtime="20230925 22:18:51.676"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230925 22:18:51.678" level="INFO">True</msg>
+<status status="PASS" starttime="20230925 22:18:51.678" endtime="20230925 22:18:51.678"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN_new} != ${FALSE}</arg>
+<arg>Click And Wait For Element</arg>
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${APPLICATION_SEARCHFIELD_CLOSE_BTN}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:18:51.680" endtime="20230925 22:18:52.119"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:18:52.121" level="INFO">Clicking element '//button[@class='btn-icon hide-focus close']'.</msg>
+<status status="PASS" starttime="20230925 22:18:52.121" endtime="20230925 22:18:52.673"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:52.119" endtime="20230925 22:18:52.673"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:51.679" endtime="20230925 22:18:52.673"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:51.679" endtime="20230925 22:18:52.673"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:19:02.673" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230925 22:18:52.673" endtime="20230925 22:19:02.673"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${APPLICATION_SEARCHFIELD}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:02.674" endtime="20230925 22:19:03.126"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:03.127" level="INFO">Clicking element '//input[@id='application-menu-searchfield']'.</msg>
+<status status="PASS" starttime="20230925 22:19:03.126" endtime="20230925 22:19:03.653"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:03.126" endtime="20230925 22:19:03.653"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:02.673" endtime="20230925 22:19:03.653"/>
+</kw>
+<kw name="Input Text2 and Enter" library="Global_Keywords">
+<arg>${APPLICATION_SEARCHFIELD}</arg>
+<arg>${SEARCH_VALUE}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:03.653" endtime="20230925 22:19:04.088"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:04.088" level="INFO">Clicking element '//input[@id='application-menu-searchfield']'.</msg>
+<status status="PASS" starttime="20230925 22:19:04.088" endtime="20230925 22:19:04.565"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:04.088" endtime="20230925 22:19:04.565"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:03.653" endtime="20230925 22:19:04.565"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:04.566" level="INFO">Typing text 'Manage Item Location' into text field '//input[@id='application-menu-searchfield']'.</msg>
+<status status="PASS" starttime="20230925 22:19:04.565" endtime="20230925 22:19:05.311"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${ENTER}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230925 22:19:05.312" level="INFO">Sending key(s) ('ENTER',) to //input[@id='application-menu-searchfield'] element.</msg>
+<msg timestamp="20230925 22:19:06.056" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20230925 22:19:06.056" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20230925 22:19:05.311" endtime="20230925 22:19:06.279"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:19:11.279" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230925 22:19:06.279" endtime="20230925 22:19:11.279"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:03.653" endtime="20230925 22:19:11.279"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${FIVE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:19:16.281" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230925 22:19:11.279" endtime="20230925 22:19:16.281"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${LOCATOR_OF_SEARCH_APPLICATION}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:16.281" endtime="20230925 22:19:16.731"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:16.733" level="INFO">Clicking element '//a[@id='AllApplicationsMenu_AllSupplyManagementMenu_SCMSetupHome_ItemMaintenanceMenu_ManageItemLocations_searchresult']//span[@class='accordion-search-span-heading'][normalize-space()='Manage Item Locations']'.</msg>
+<status status="PASS" starttime="20230925 22:19:16.732" endtime="20230925 22:19:17.275"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:16.732" endtime="20230925 22:19:17.275"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:16.281" endtime="20230925 22:19:17.275"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:51.233" endtime="20230925 22:19:17.275"/>
+</kw>
+<status status="PASS" starttime="20230925 22:18:51.233" endtime="20230925 22:19:17.275"/>
+</kw>
+<kw name="And I Added to Item Location" library="TCCSF165_Keywords">
+<kw name="Create Manange Item Location" library="Global_Workflow">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MANAGE_ITEM_LOCATION_HEADER}</arg>
+<arg>${TEN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:17.275" endtime="20230925 22:19:19.876"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>${FIVE}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230925 22:19:24.877" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230925 22:19:19.876" endtime="20230925 22:19:24.877"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${MANAGE_ITEM_LOCATION_TITLE}</arg>
+<arg>${ELEMENT_DISPLAYED}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230925 22:19:25.328" level="INFO">Element '//span[@id='ManageItemLocationPage_ItemLocations_ItemsForAnInventoryLocation_toolbar_title']' is displayed.</msg>
+<status status="PASS" starttime="20230925 22:19:24.877" endtime="20230925 22:19:25.328"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${MANAGE_ITEM_LOCATION_CREATE_BTN}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:25.329" endtime="20230925 22:19:25.773"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:25.776" level="INFO">Clicking element '//button[@id='ManageItemLocationPage_ItemLocations_ItemsForAnInventoryLocation_Create_2_toolbar_button']'.</msg>
+<status status="PASS" starttime="20230925 22:19:25.775" endtime="20230925 22:19:26.318"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:25.773" endtime="20230925 22:19:26.318"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:25.328" endtime="20230925 22:19:26.318"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${MANAGE_ITEM_LOCATION_CREATE_HOME_PAGE}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:26.318" endtime="20230925 22:19:28.986"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:28.986" level="INFO">Clicking element '//span[@id='ItemLocation_toolbar_title']'.</msg>
+<status status="PASS" starttime="20230925 22:19:28.986" endtime="20230925 22:19:29.480"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:28.986" endtime="20230925 22:19:29.480"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:26.318" endtime="20230925 22:19:29.480"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${ITEMLOC_COMPANY_FIELD}</arg>
+<arg>${9000}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:29.482" endtime="20230925 22:19:29.924"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:29.925" level="INFO">Clicking element '//input[@id='ItemLocation_Company']'.</msg>
+<status status="PASS" starttime="20230925 22:19:29.925" endtime="20230925 22:19:30.448"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:29.925" endtime="20230925 22:19:30.448"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:29.481" endtime="20230925 22:19:30.448"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:30.448" level="INFO">Typing text '9000' into text field '//input[@id='ItemLocation_Company']'.</msg>
+<status status="PASS" starttime="20230925 22:19:30.448" endtime="20230925 22:19:31.191"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:29.480" endtime="20230925 22:19:31.191"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${ITEMLOC_LOCATION}</arg>
+<arg>${LOC1}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:31.193" endtime="20230925 22:19:31.645"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:31.646" level="INFO">Clicking element '//input[@id='ItemLocation_InventoryLocation']'.</msg>
+<status status="PASS" starttime="20230925 22:19:31.646" endtime="20230925 22:19:32.179"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:31.645" endtime="20230925 22:19:32.179"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:31.192" endtime="20230925 22:19:32.179"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:32.179" level="INFO">Typing text 'LOC1' into text field '//input[@id='ItemLocation_InventoryLocation']'.</msg>
+<status status="PASS" starttime="20230925 22:19:32.179" endtime="20230925 22:19:32.887"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:31.192" endtime="20230925 22:19:32.887"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ItemNumber1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230925 22:19:32.887" endtime="20230925 22:19:32.888"/>
+</kw>
+<kw name="Input Text2" library="Global_Keywords">
+<arg>${ITEMLOC_ITEM}</arg>
+<arg>${ItemNumber1}</arg>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${RETRY}</arg>
+<arg>${INTERVAL}</arg>
+<arg>${Locator}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${StandardTimeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230925 22:19:32.889" endtime="20230925 22:19:33.345"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${NumberOfRetry}</arg>
+<arg>${Interval}</arg>
+<arg>Click Element</arg>
+<arg>${Locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:33.347" level="INFO">Clicking element '//input[@id='ItemLocation_Item']'.</msg>
+<status status="PASS" starttime="20230925 22:19:33.346" endtime="20230925 22:19:33.863"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:33.345" endtime="20230925 22:19:33.863"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:32.889" endtime="20230925 22:19:33.863"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Data}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:33.863" level="INFO">Typing text '27817' into text field '//input[@id='ItemLocation_Item']'.</msg>
+<status status="PASS" starttime="20230925 22:19:33.863" endtime="20230925 22:19:34.587"/>
+</kw>
+<status status="PASS" starttime="20230925 22:19:32.888" endtime="20230925 22:19:34.587"/>
+</kw>
+<kw name="Unselect Checkbox" library="SeleniumLibrary">
+<arg>${INVENTORY_TRACK_NO}</arg>
+<doc>Removes the selection of checkbox identified by ``locator``.</doc>
+<msg timestamp="20230925 22:19:34.588" level="INFO">Unselecting checkbox '[NONE]'.</msg>
+<msg timestamp="20230925 22:19:35.388" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230925 22:19:35.388" level="FAIL">Checkbox with locator '[NONE]' not found.</msg>
+<status status="FAIL" starttime="20230925 22:19:34.587" endtime="20230925 22:19:35.392"/>
+</kw>
+<kw name="Click And Wait For Element" library="Global_Keywords">
+<arg>${FIVE}</arg>
+<arg>${FIVE}</arg>
+<arg>${ITEMLOC_SAVEBTN}</arg>
+<status status="NOT RUN" starttime="20230925 22:19:35.392" endtime="20230925 22:19:35.392"/>
+</kw>
+<status status="FAIL" starttime="20230925 22:19:17.275" endtime="20230925 22:19:35.392"/>
+</kw>
+<status status="FAIL" starttime="20230925 22:19:17.275" endtime="20230925 22:19:35.392"/>
+</kw>
+<status status="FAIL" starttime="20230925 22:18:04.936" endtime="20230925 22:19:35.392">Checkbox with locator '[NONE]' not found.</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230925 22:19:35.394" endtime="20230925 22:19:37.742"/>
+</kw>
+<status status="FAIL" starttime="20230925 22:17:17.095" endtime="20230925 22:19:37.742"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="TCCSF165 SearchCatalog">TCCSF165 SearchCatalog</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

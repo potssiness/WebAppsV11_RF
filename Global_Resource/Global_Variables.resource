@@ -31,7 +31,8 @@ ${TEN}      10
 
 ${BG1}          BG1
 ${EA}           EA
-
+${9000}         9000
+${LOC1}         LOC1
 
 #**********     KEYS       **********
 ${ENTER}        ENTER
@@ -39,3 +40,8 @@ ${ENTER}        ENTER
 #**********     NAVIGATION SEARCH FIELD DATA       **********
 ${MANAGE_ITEM}      Manage Item
 ${MANAGE_ITEM_LOCATION}      Manage Item Location
+
+
+
+#**********     WORD VARIABLE      **********
+${ELEMENT_DISPLAYED}        Element is displayed
