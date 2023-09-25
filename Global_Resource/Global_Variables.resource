@@ -31,3 +31,11 @@ ${TEN}      10
 
 ${BG1}          BG1
 ${EA}           EA
+
+
+#**********     KEYS       **********
+${ENTER}        ENTER
+
+#**********     NAVIGATION SEARCH FIELD DATA       **********
+${MANAGE_ITEM}      Manage Item
+${MANAGE_ITEM_LOCATION}      Manage Item Location

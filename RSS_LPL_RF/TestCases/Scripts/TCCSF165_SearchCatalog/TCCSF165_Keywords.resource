@@ -9,7 +9,7 @@ I click navigate to applications Application Administrator
     element should be visible    ${AVAILABLE_APPLICATION}
 
 I Navigate to manage Item
-	Navigate to Manage Item
+	Navigate to via Search bar      ${MANAGE_ITEM}      ${SEARCH_MANAGE_ITEM}
 
 I create Stock Item
 	Create Item    ${TCCSF165}      ${TCCSF165}     ${EA}

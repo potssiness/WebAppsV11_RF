@@ -84,6 +84,14 @@ Input Text2
     Click And Wait For Element  ${RETRY}    ${INTERVAL}    ${Locator}
     Input Text    ${Locator}    ${Data}
 
+Input Text2 and Enter
+    [Arguments]    ${Locator}    ${Data}
+    Click And Wait For Element  ${RETRY}    ${INTERVAL}    ${Locator}
+    Input Text    ${Locator}    ${Data}
+    Press Keys     ${Locator}    ${ENTER}
+    Sleep    5
+
+
 Click And Wait For Element
     [Arguments]    ${NumberOfRetry}    ${Interval}    ${Locator}
     Wait Until Element Is Visible    ${Locator}    ${StandardTimeout}
@@ -101,7 +109,7 @@ Navigate to Applications
     [Arguments]    ${Applications}
     ${APPLICATION_SEARCHFIELD_NEW}    run keyword and return status    element should be visible      ${APPLICATION_SEARCHFIELD}
     run keyword if    ${APPLICATION_SEARCHFIELD_NEW}==${NULL}    click element    ${APPLICATION_HAMBURGER}
-    click element    ${APPLICATION_HAMBURGER}
+    Click And Wait For Element        ${FIVE}       ${FIVE}       ${APPLICATION_HAMBURGER}
     CLICK AND WAIT FOR ELEMENT        ${INTERVAL}   	${Three}        ${APPLICATION_DROPDOWSELECTOR}
     scroll element into view          ${Applications}
     CLICK AND WAIT FOR ELEMENT        ${INTERVAL}   	${Three}        ${Applications}

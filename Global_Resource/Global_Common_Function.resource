@@ -10,18 +10,25 @@ FSM Login Portal Page and Navigate to FSM Menu
     Input Username and Password     ${UserNameField}    ${PasswordField}    ${USERNAME_VAR}      ${PASSWORD_VAR}
     Click And Wait For Element    ${Three}   ${INTERVAL}      ${LoginButton}
     Sleep    ${TEN}
+    #**************************   This will catch Invalid Email bar   **************************
     ${Email_Not_Verified_NEW}  Run Keyword And Return Status    Element Should Be Visible    ${Email_Not_Verified}
     Log To Console    ${Email_Not_Verified_NEW}
     Run Keyword If   ${Email_Not_Verified_NEW} != ${FALSE}  Click and wait for element    ${Three}   ${INTERVAL}    ${Email_Not_Verified_CloseBtn}
+
     wait until element is visible    ${Application_Launcher}     ${StandardTimeout}
     click and wait for element    ${Three}   ${INTERVAL}    ${Application_Launcher}
+    Scroll Element Into View      ${APPLICATION_SHOW_MORE}
     click and wait for element    ${Three}   ${INTERVAL}    ${APPLICATION_SHOW_MORE}
-    ${FSM_MENU_V3}    run keyword and return status    element should be visible      ${4.0_FSM_MENU_V3}
-    log    ${FSM_MENU_V3}
-#    run keyword if    ${FSM_MENU_V3}=='null'    click and wait for element    ${Three}   ${INTERVAL}    ${4.0_FSM_MENU_V2}
-    click and wait for element    ${Three}   ${INTERVAL}    ${4.0_FSM_MENU_V3}
+    Sleep    ${FIVE}
+    #**************************   Verifying if V2 OR V3 will be used   **************************
+    click and wait for element    ${Three}   ${INTERVAL}    ${4.0_FSM_TESTVERSION_V2}
     select frame    ${IFRAME_FSM_MENU}
-    WAIT UNTIL ELEMENT IS VISIBLE       ${AVAILABLE_APPLICATION}    ${MaximumTimeout}
+#    ${FSM_MENU_V3}    run keyword and return status    element should be visible      ${4.0_FSM_MENU_V3}
+#    Log To Console        ${FSM_MENU_V3}
+#    run keyword if    ${FSM_MENU_V3}==${FALSE}    click and wait for element    ${Three}   ${INTERVAL}    ${4.0_FSM_MENU_V2}
+#    run keyword if    ${FSM_MENU_V3}!=${FALSE}    click and wait for element    ${Three}   ${INTERVAL}    ${4.0_FSM_MENU_V3}
+#    select frame    ${IFRAME_FSM_MENU}
+#    WAIT UNTIL ELEMENT IS VISIBLE       ${AVAILABLE_APPLICATION}    ${MaximumTimeout}
     log    visible
     sleep    ${StandardTimeout}
 

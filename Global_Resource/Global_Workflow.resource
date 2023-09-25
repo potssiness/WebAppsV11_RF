@@ -9,6 +9,16 @@ Navigate to Manage Item
     Click And Wait For Element     ${FIVE}       ${FIVE}     ${APP_ITEMS}
     Click And Wait For Element     ${FIVE}       ${FIVE}     ${APP_MANGE_ITEM}
 
+Navigate to via Search bar
+	[Arguments]    ${SEARCH_VALUE}      ${LOCATOR_OF_SEARCH_APPLICATION}
+	Clear Element Text    ${APPLICATION_SEARCHFIELD}
+    Log To Console    Navigating to Manage Item
+    Click And Wait For Element    ${FIVE}       ${FIVE}     ${APPLICATION_SEARCHFIELD}
+    Input Text2 and Enter       ${APPLICATION_SEARCHFIELD}      ${SEARCH_VALUE}
+    Sleep    ${FIVE}
+#    Pause Execution
+    Click And Wait For Element    ${RETRY}    ${INTERVAL}    ${LOCATOR_OF_SEARCH_APPLICATION}
+
 Create Item
     [Arguments]     ${FIRST_ITEM_ITEMDESCRIPTION_ONE}=${EMPTY}      ${FIRST_ITEM_ITEMDESCRIPTION_TWO}=${EMPTY}     ${FIRST_ITEM_UOM}=${EMPTY}
     ${RANDNumber}    Generate random string    6    0123456789
@@ -23,8 +33,11 @@ Create Item
     Click And Wait For Element    ${FIVE}       ${FIVE}     ${CREATE_ITEM_SAVE_BTN}
     Wait Until Element Is Visible    ${CREATE_ITEM_ITEM_NUMBER}     ${TEN}
     ${ItemNumber1}    get text    ${CREATE_ITEM_ITEM_NUMBER}
+    # This will be the Item Variable
     set global variable    ${ItemNumber1}
     Log To Console    ITEM NUMBER = ${ItemNumber1}
+
+
 
 
 
