@@ -34,14 +34,14 @@ ${EA}           EA
 ${9000}         9000
 ${LOC1}         LOC1
 
+
 #**********     KEYS       **********
 ${ENTER}        ENTER
+
+#**********     WORD VARIABLE      **********
+${ELEMENT_DISPLAYED}    Element is displayed
 
 #**********     NAVIGATION SEARCH FIELD DATA       **********
 ${MANAGE_ITEM}      Manage Item
 ${MANAGE_ITEM_LOCATION}      Manage Item Location
-
-
-
-#**********     WORD VARIABLE      **********
-${ELEMENT_DISPLAYED}        Element is displayed
+${REQUSTER_SHOOPING_HOME}    Shopping Home

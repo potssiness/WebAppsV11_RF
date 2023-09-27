@@ -9,8 +9,7 @@ Resource    TCCSF165_Keywords.resource
 *** Test Cases ***
 #POWER USER SETTING
 PRECONDITION: CREATE ITEM DATA
-	Given I Click Navigate To Applications Application Administrator
-	And I Navigate To Manage Item
+	Given I Navigate To Manage Item
 	And I Create Stock Item
 	And I Navigate to Item Location
 	And I Added to Item Location

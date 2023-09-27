@@ -26,6 +26,7 @@ ${SUPPLY_MANAGEMENT}                //span[normalize-space()='Supply Management'
 ${SUPPLY_MANAGEMENT_SETUP}          //span[normalize-space()='Supply Management Setup']
 ${APP_ITEMS}                        //span[normalize-space()='Items']
 ${APP_MANGE_ITEM}                   //span[normalize-space()='Manage Items']
+${REQ_SHOPPING_HOME}                //span[@class='accordion-search-span-heading']
 
 #******************   Application Location List Via Search Bar   ******************
 ${SEARCH_MANAGE_ITEM}       (//span[contains(text(),'Manage Items')])[1]

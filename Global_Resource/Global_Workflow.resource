@@ -3,28 +3,16 @@ Resource    Global_Resources.resource
 
 *** Keywords ***
 Navigate to Manage Item
-    Log To Console    Navigating to Manage Item
     Click And Wait For Element     ${FIVE}       ${FIVE}     ${SUPPLY_MANAGEMENT}
     Click And Wait For Element     ${FIVE}       ${FIVE}     ${SUPPLY_MANAGEMENT_SETUP}
     Click And Wait For Element     ${FIVE}       ${FIVE}     ${APP_ITEMS}
     Click And Wait For Element     ${FIVE}       ${FIVE}     ${APP_MANGE_ITEM}
 
-Navigate to via Search bar
-	[Arguments]    ${SEARCH_VALUE}      ${LOCATOR_OF_SEARCH_APPLICATION}
-    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}   Run Keyword And Return Status     Element Should Be Visible   ${APPLICATION_SEARCHFIELD_CLOSE_BTN}
-    Log    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}
-    Run Keyword If    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new} != ${FALSE}    Click And Wait For Element    ${FIVE}    ${FIVE}    ${APPLICATION_SEARCHFIELD_CLOSE_BTN}
-	Sleep    10
-    Click And Wait For Element    ${FIVE}       ${FIVE}     ${APPLICATION_SEARCHFIELD}
-    Input Text2 and Enter       ${APPLICATION_SEARCHFIELD}      ${SEARCH_VALUE}
-    Sleep    ${FIVE}
-#    Pause Execution
-    Click And Wait For Element    ${RETRY}    ${INTERVAL}    ${LOCATOR_OF_SEARCH_APPLICATION}
-
 Create Item
-    [Arguments]     ${FIRST_ITEM_ITEMDESCRIPTION_ONE}=${EMPTY}      ${FIRST_ITEM_ITEMDESCRIPTION_TWO}=${EMPTY}     ${FIRST_ITEM_UOM}=${EMPTY}
+    [Arguments]     ${FIRST_ITEM_ITEMDESCRIPTION_ONE}=${EMPTY}
+    ...     ${FIRST_ITEM_ITEMDESCRIPTION_TWO}=${EMPTY}     ${FIRST_ITEM_UOM}=${EMPTY}
     ${RANDNumber}    Generate random string    6    0123456789
-    Log   ${RANDNumber}
+#    Log   ${RANDNumber}
     Wait Until Element Is Visible    ${MANAGE_ITEM_LABEL}    ${TEN}
     Click And Wait For Element      ${FIVE}       ${FIVE}     ${CREATE_ITEM_BTN}
     Wait Until Element Is Visible    ${CREATE_ITEM_MAIN_TAB}    ${TEN}
@@ -37,7 +25,16 @@ Create Item
     ${ItemNumber1}    get text    ${CREATE_ITEM_ITEM_NUMBER}
     # This will be the Item Variable
     set global variable    ${ItemNumber1}
-    Log To Console    ITEM NUMBER = ${ItemNumber1}
+    Log    ITEM NUMBER = ${ItemNumber1}
+    RETURN      ${ItemNumber1}
+
+Create Multiple Items
+	[Arguments]     ${MAX_LENGHT}    ${FIRST_ITEM_ITEMDESCRIPTION_ONE}=${EMPTY}
+	...     ${FIRST_ITEM_ITEMDESCRIPTION_TWO}=${EMPTY}     ${FIRST_ITEM_UOM}=${EMPTY}
+	 FOR     ${i}    IN RANGE   ${MAX_LENGHT}
+	    Create List    ITEM_NUMBERS
+	    Append To List      ITEM_NUMBERS   Create Item      ${FIRST_ITEM_ITEMDESCRIPTION_ONE}=${EMPTY}
+	    ...     ${FIRST_ITEM_ITEMDESCRIPTION_TWO}=${EMPTY}      ${FIRST_ITEM_UOM}=${EMPTY}
 
 Create Manange Item Location
 	#*******   Supply arguments to become non stock to uncheck inventory track   *******
@@ -51,8 +48,13 @@ Create Manange Item Location
     Input Text2    ${ITEMLOC_LOCATION}      ${LOC1}
     Log To Console    ${ItemNumber1}
     Input Text2    ${ITEMLOC_ITEM}      ${ItemNumber1}
+    # This chunk of code is in progress
     Unselect Checkbox   ${INVENTORY_TRACK_NO}
     Click And Wait For Element    ${FIVE}   ${FIVE}     ${ITEMLOC_SAVEBTN}
+
+Create Multiple Item Locations
+	 FOR ${i} IN RANGE ${10}
+
 
 
 

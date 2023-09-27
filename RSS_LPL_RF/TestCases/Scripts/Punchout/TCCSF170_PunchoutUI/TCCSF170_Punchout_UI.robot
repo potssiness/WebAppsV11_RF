@@ -9,13 +9,15 @@ Resource    TCCSF170_Keywords.resource
 
 
 *** Test Cases ***
-Precondition: Login
+PRECONDITION: Login
     Given I will navigate to applications Requester
-    Then Go to RSS LPL
 
-Scenario: Start of Punchout UI testing
+SCENARIO1: Start of Punchout UI testing
     Given I will novigate to Punchout
     And I will validate fields buttons in Punchout screen
+
+SCENARIO2: Transaction in Punchout using Amazon
+	 Given I Will Create transaction in Punchout
 
 
 

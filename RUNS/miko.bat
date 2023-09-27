@@ -1,0 +1,2 @@
+cd C:\Users\mcapote\PycharmProjects\WebAppsV11_RF
+robot -d C:\Users\mcapote\PycharmProjects\WebAppsV11_RF\Reports --timestampoutputs .\RSS_LPL_RF\TestCases\Scripts\TCCSF165_SearchCatalog\TCCSF165_SearchCatalog.robot

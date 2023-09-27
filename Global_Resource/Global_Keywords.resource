@@ -8,6 +8,7 @@ Open Browser And Maximize Window
     [Arguments]      ${Url}    ${Browser}   ${USER}  ${PASSWORD}
     Go to Browser    ${Url}    ${Browser}
     Maximize Browser Window
+    Set Selenium Timeout    ${TEN}
     FSM Login Portal Page and Navigate to FSM Menu   ${USER}     ${PASSWORD}
   #  Maximize Browser Window
 Open On Headless Browser
@@ -111,5 +112,21 @@ Navigate to Applications
     run keyword if    ${APPLICATION_SEARCHFIELD_NEW}==${NULL}    click element    ${APPLICATION_HAMBURGER}
     Click And Wait For Element        ${FIVE}       ${FIVE}       ${APPLICATION_HAMBURGER}
     CLICK AND WAIT FOR ELEMENT        ${INTERVAL}   	${Three}        ${APPLICATION_DROPDOWSELECTOR}
+    Sleep    ${FIVE}
     scroll element into view          ${Applications}
     CLICK AND WAIT FOR ELEMENT        ${INTERVAL}   	${Three}        ${Applications}
+
+Navigate to via Search bar
+	[Arguments]    ${SEARCH_VALUE}      ${LOCATOR_OF_SEARCH_APPLICATION}
+    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}   Run Keyword And Return Status
+    ...     Element Should Be Visible   ${APPLICATION_SEARCHFIELD_CLOSE_BTN}
+    Log    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new}
+    Run Keyword If    ${APPLICATION_SEARCHFIELD_CLOSE_BTN_new} != ${FALSE}
+    ...     Click And Wait For Element    ${FIVE}    ${FIVE}    ${APPLICATION_SEARCHFIELD_CLOSE_BTN}
+	Sleep    ${FIVE}
+    Click And Wait For Element    ${FIVE}       ${FIVE}     ${APPLICATION_SEARCHFIELD}
+    Input Text2 and Enter       ${APPLICATION_SEARCHFIELD}      ${SEARCH_VALUE}
+    Wait Until Element Is Visible    ${LOCATOR_OF_SEARCH_APPLICATION}
+#    Pause Execution
+    Click And Wait For Element    ${RETRY}    ${INTERVAL}    ${LOCATOR_OF_SEARCH_APPLICATION}
+    Sleep    ${FIVE}
